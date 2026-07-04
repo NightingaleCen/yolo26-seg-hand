@@ -1,0 +1,25 @@
+[project]
+name = "handyolo"
+version = "0.1.0"
+description = "Hand segmentation with YOLO + HaGRID pseudo-labeling pipeline"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "tensorboard>=2.21.0",
+    "torch>=2.11.0",
+    "torchvision>=0.26.0",
+    "ultralytics>=8.4.83",
+    "mediapipe",
+    "sapiens",
+    "onnxruntime-gpu>=1.27.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://mirrors.nju.edu.cn/pytorch/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+sapiens = { git = "https://github.com/facebookresearch/sapiens2.git" }
