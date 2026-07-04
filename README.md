@@ -1,7 +1,7 @@
-# HandYOLO
+# yolo26-seg-hand
 
 Real-time hand segmentation with [YOLO26m-seg](https://github.com/ultralytics/ultralytics), designed to pair with
-MediaPipe HandLandmarker's bounding box for per-hand 224×224 crop inference.
+MediaPipe HandLandmarker's bounding box for per-hand 224×224 crop inference. Performs well on webcam photos.
 
 ## Model weights
 
@@ -19,8 +19,8 @@ Two-stage training on a single RTX 5070 Ti Laptop:
 
 | Stage | Dataset | Epochs | LR | mAP50-95(M) |
 |---|---|---|---|---|
-| 1 — learn boundaries | FreiHAND (26k, clean GT) | 150 | 1e‑3 | 0.831 |
-| 2 — adapt to domain | HaGRID subset (113k, Sapiens2 pseudo-labels) | 10 | 1e‑4 | 0.902† |
+| 1 | FreiHAND (26k, clean GT) | 150 | 1e‑3 | 0.831 |
+| 2 | HaGRID subset (113k, Sapiens2 pseudo-labels) | 10 | 1e‑4 | 0.902† |
 
 † HaGRID val is also pseudo-labeled
 
